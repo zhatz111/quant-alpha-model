@@ -1,0 +1,2 @@
+# quant-alpha-model
+ A quantitative research project that develops and backtests a multi-factor alpha model for Indian mid-cap equities using regime-switching macroeconomic signals. The project includes data engineering, factor construction, econometric modeling, machine-learning-based cross-sectional return forecasts, portfolio optimization, and a full historical backtest with performance and risk analysis.
