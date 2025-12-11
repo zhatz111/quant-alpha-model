@@ -1,0 +1,70 @@
+{
+    // Python Interpreter
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+    "python.terminal.activateEnvironment": true,
+    // Testing
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.autoTestDiscoverOnSaveEnabled": true,
+    // Formatting & Linting (using Ruff - the modern standard)
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+            "source.fixAll": "explicit"
+        },
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.detectIndentation": false
+    },
+    // Type Checking
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportUnusedImport": "information",
+        "reportUnusedVariable": "information"
+    },
+    // Editor Settings
+    "editor.rulers": [
+        88,
+        120
+    ],
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    // Files to exclude from explorer
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "**/.pytest_cache": true,
+        "**/.ruff_cache": true,
+        "**/.mypy_cache": true,
+        "**/*.egg-info": true
+    },
+    // Search exclusions
+    "search.exclude": {
+        "**/.venv": true,
+        "**/node_modules": true,
+        "**/__pycache__": true,
+        "**/*.pyc": true
+    },
+    // Terminal
+    // Set UV_PYTHON_PREFERENCE to only-managed to ensure the terminal uses the workspace virtual environment
+    "terminal.integrated.env.windows": {
+        "UV_PYTHON_PREFERENCE": "only-managed"
+    },
+    "terminal.integrated.env.linux": {
+        "UV_PYTHON_PREFERENCE": "only-managed"
+    },
+    "terminal.integrated.env.osx": {
+        "UV_PYTHON_PREFERENCE": "only-managed"
+    },
+    // If you use Jupyter notebooks
+    "jupyter.askForKernelRestart": false,
+    "notebook.output.textLineLimit": 500,
+    // If you want auto-save
+    "files.autoSave": "onFocusChange"
+}

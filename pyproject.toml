@@ -1,0 +1,18 @@
+[project]
+name = "quant-alpha-model"
+version = "0.1.0"
+description = "A quantitative research project that develops and backtests a multi-factor alpha model for Indian mid-cap equities using regime-switching macroeconomic signals. The project includes data engineering, factor construction, econometric modeling, machine-learning-based cross-sectional return forecasts, portfolio optimization, and a full historical backtest with performance and risk analysis."
+readme = "README.md"
+# Your project is compatible with Python 3.11 and newer
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib>=3.10.8",
+    "numpy>=2.3.5",
+    "pandas>=2.3.3",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "ruff>=0.14.8",
+]

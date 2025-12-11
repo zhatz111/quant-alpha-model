@@ -36,7 +36,11 @@ venv.bak/
 .ipynb_checkpoints/
 
 # VSCode / PyCharm
-.vscode/
+# Commit some, not all
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
 .idea/
 
 # -----------------------------
