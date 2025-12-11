@@ -1,0 +1,82 @@
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+eggs/
+*.egg-info/
+.eggs/
+parts/
+var/
+sdist/
+pip-wheel-metadata/
+*.egg
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+env.bak/
+venv.bak/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# -----------------------------
+# Data files
+# -----------------------------
+data/raw/
+data/processed/
+data/external/
+*.csv
+*.xlsx
+*.parquet
+*.h5
+*.zip
+*.pkl
+
+# Allow sample data files
+!data/raw/example_*.csv
+
+# -----------------------------
+# Logs / cache
+# -----------------------------
+*.log
+logs/
+.cache/
+__cache__/
+
+# -----------------------------
+# OS Files
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# Streamlit / dashboards
+# -----------------------------
+.streamlit/
+
+# -----------------------------
+# Testing / coverage
+# -----------------------------
+.pytest_cache/
+coverage.xml
+.c
