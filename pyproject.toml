@@ -6,13 +6,24 @@ readme = "README.md"
 # Your project is compatible with Python 3.11 and newer
 requires-python = ">=3.11"
 dependencies = [
+    "alpaca-py>=0.43.2",
+    "arch>=8.0.0",
+    "backtrader>=1.9.78.123",
+    "dotenv>=0.9.9",
     "matplotlib>=3.10.8",
     "numpy>=2.3.5",
     "pandas>=2.3.3",
+    "polars>=1.36.1",
+    "pyarrow>=22.0.0",
+    "scikit-learn>=1.8.0",
+    "scipy>=1.16.3",
+    "seaborn>=0.13.2",
+    "statsmodels>=0.14.6",
 ]
 
 [dependency-groups]
 dev = [
+    "ipykernel>=7.1.0",
     "pytest>=9.0.2",
     "ruff>=0.14.8",
 ]

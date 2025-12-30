@@ -55,6 +55,7 @@ data/external/
 *.h5
 *.zip
 *.pkl
+.env
 
 # Allow sample data files
 !data/raw/example_*.csv

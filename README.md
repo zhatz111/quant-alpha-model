@@ -6,18 +6,17 @@ A quantitative research project that develops and backtests a multi-factor alpha
 
 placeholder
 
-
-
-
 ## Python Project Management with `uv`
 
 ### __Key Files__
+
 - `pyproject.toml` - Dependencies, project metadata, tool configs
 - `uv.lock` - Exact dependency versions (make sure to commit this)
 - `.python-version` - Python version for this project
 - `.venv/` - Virtual environment (do not commit this)
 
 ### __Quick Reference__
+
 ```bash
 uv init                   # Start new project
 uv python install         # Install Python version
@@ -95,6 +94,7 @@ uv sync # sync environment with lock file
 ```
 
 ### __Running Code__
+
 ```bash
 # Run a Python script
 uv run main.py
@@ -110,6 +110,7 @@ uv run --with httpx -- python script.py
 ```
 
 ### __Virtual Enviroments__
+
 ```bash
 # Create a venv (usually automatic)
 uv venv
@@ -128,14 +129,17 @@ us sync --no-dev
 ```
 
 ### __VS Code Integration__
+
 Add to your `.vscode/settings.json`
 
 After running `uv sync`, select the interpreter:
+
 - Press `Ctrl + Shift + P` (`Cmd + Shift + P` on Mac)
 - Type "Python: Select Interpreter"
 - Choose the one in `.venv`
 - You can reload VS Code with `Ctrl + Shift + P` (`Cmd + Shift + P` on Mac) and run "Developer: Reload Window"
 - Default interpreter path if pointed just to `.venv` will find the correct python installation on both Windows and macOS/Linux
+
 ```json
 {
     // Python Interpreter
@@ -211,37 +215,45 @@ After running `uv sync`, select the interpreter:
 ```
 
 ### __Common Workflows__
+
 #### Starting Development
+
 ```bash
 uv sync # install all dependencies
 uv run python main.py
 ```
+
 #### Add New Dependency
+
 ```bash
 uv add some-package
 # Will automatically update pyproject.toml, uv.lock, and installs the package
 ```
+
 #### Running Tests
+
 ```bash
 uv run pytest
 # or
 uv run python -m pytest
 ```
+
 #### Formatting and Linting
+
 ```bash
 uv add --dev ruff
 uv run ruff check .
 uv run ruff format .
 ```
+
 ### __Extensions to Install__
+
 ```bash
 # In VS Code, install these:
 # 1. Python (ms-python.python)
 # 2. Ruff (charliermarsh.ruff)
 # 3. Even Better TOML (tamasfe.even-better-toml) - for pyproject.toml
 ```
-
-
 
 ## Folder Structure
 
