@@ -1,0 +1,105 @@
+version: 1
+disable_existing_loggers: False
+
+formatters:
+  standard:
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    datefmt: '%Y-%m-%d %H:%M:%S'
+
+  detailed:
+    format: '%(asctime)s - %(name)s - %(levelname)s - [%(filename)s:%(lineno)d] - %(message)s'
+    datefmt: '%Y-%m-%d %H:%M:%S'
+
+  trading:
+    format: '%(asctime)s - %(levelname)s - [%(name)s] - %(message)s'
+    datefmt: '%Y-%m-%d %H:%M:%S.%f'
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: standard
+    stream: ext://sys.stdout
+
+  file_all:
+    class: logging.handlers.RotatingFileHandler
+    level: DEBUG
+    formatter: detailed
+    filename: logs/trading_all.log
+    maxBytes: 10485760  # 10MB
+    backupCount: 5
+
+  file_backtest:
+    class: logging.handlers.RotatingFileHandler
+    level: DEBUG
+    formatter: detailed
+    filename: logs/backtesting.log
+    maxBytes: 10485760
+    backupCount: 3
+
+  file_strategies:
+    class: logging.handlers.RotatingFileHandler
+    level: DEBUG
+    formatter: detailed
+    filename: logs/backtesting.log
+    maxBytes: 10485760
+    backupCount: 3
+
+  file_paper:
+    class: logging.handlers.RotatingFileHandler
+    level: INFO
+    formatter: trading
+    filename: logs/paper_trading.log
+    maxBytes: 10485760
+    backupCount: 5
+
+  file_live:
+    class: logging.handlers.RotatingFileHandler
+    level: INFO
+    formatter: trading
+    filename: logs/live_trading.log
+    maxBytes: 10485760
+    backupCount: 10
+
+  file_live_critical:
+    class: logging.handlers.RotatingFileHandler
+    level: WARNING
+    formatter: detailed
+    filename: logs/live_critical.log
+    maxBytes: 10485760
+    backupCount: 20
+
+loggers:
+  src:
+    level: DEBUG
+    handlers: [console, file_all]
+    propagate: False
+
+  backtesting:
+    level: DEBUG
+    handlers: [file_backtest]
+    propagate: True
+
+  strategies:
+    level: DEBUG
+    handlers: [file_strategies]
+    propagate: True
+
+  paper:
+    level: INFO
+    handlers: [file_paper]
+    propagate: True
+
+  live:
+    level: INFO
+    handlers: [file_live, file_live_critical]
+    propagate: True
+
+  py.warnings:
+    level: WARNING
+    handlers: [file_all]
+    propagate: False
+
+root:
+  level: WARNING
+  handlers: [console]

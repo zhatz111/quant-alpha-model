@@ -2,6 +2,8 @@
     // Python Interpreter
     "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
     "python.terminal.activateEnvironment": true,
+    "python.terminal.executeInFileDir": false,
+    "python.envFile": "${workspaceFolder}/.env",
     // Testing
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
@@ -65,6 +67,7 @@
     // If you use Jupyter notebooks
     "jupyter.askForKernelRestart": false,
     "notebook.output.textLineLimit": 500,
+    "jupyter.notebookFileRoot": "${workspaceFolder}",
     // If you want auto-save
     "files.autoSave": "onFocusChange"
 }
