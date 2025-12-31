@@ -46,9 +46,9 @@ venv.bak/
 # -----------------------------
 # Data files
 # -----------------------------
-data/raw/
-data/processed/
-data/external/
+# data/raw/
+# data/processed/
+# data/external/
 *.csv
 *.xlsx
 *.parquet
@@ -64,7 +64,7 @@ data/external/
 # Logs / cache
 # -----------------------------
 *.log
-logs/
+# logs/
 .cache/
 __cache__/
 
