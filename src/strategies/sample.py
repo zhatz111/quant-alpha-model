@@ -1,9 +1,9 @@
 import backtrader as bt
 import numpy as np
 
-from logger.logging import get_logger
+from utils.logging import get_logger
 
-logger = get_logger(__name__)  # Creates 'strategies.sample'
+logger = get_logger(__name__)
 
 
 class SampleStrategy_Backtesting(bt.Strategy):
@@ -13,7 +13,7 @@ class SampleStrategy_Backtesting(bt.Strategy):
 
     params = (
         ("rebalance_hours", 1),  # Rebalance frequency in days
-        ("z_threshold", 0.50),  # Don't trade with signals below this value
+        ("z_threshold", 0.00),  # Don't trade with signals below this value
     )
 
     logger.info(f"Strategy parameters: {params}")
@@ -117,6 +117,10 @@ class SampleStrategy_Backtesting(bt.Strategy):
         # Get current portfolio value
         portfolio_value = self.broker.getvalue()
 
+        weights = np.ones(len(available_symbols)) / len(
+            available_symbols
+        )  # Equal weights benchmark
+
         # Rebalance portfolio
         for i, symbol in enumerate(available_symbols):
             data = self.data_dict[symbol]
@@ -131,7 +135,6 @@ class SampleStrategy_Backtesting(bt.Strategy):
 
             if abs(value_diff) > portfolio_value * 0.02:  # Only trade if >2% difference
                 size = value_diff / data.close[0]
-
                 self.order_target_size(data=data, target=position.size + size)
 
     def notify_order(self, order):
