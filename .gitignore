@@ -49,7 +49,7 @@ venv.bak/
 # data/raw/
 # data/processed/
 # data/external/
-*.csv
+# *.csv
 *.xlsx
 *.parquet
 *.h5
