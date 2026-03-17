@@ -29,7 +29,7 @@
     },
     // Editor Settings
     "editor.rulers": [
-        88,
+        100,
         120
     ],
     "editor.bracketPairColorization.enabled": true,
@@ -69,5 +69,10 @@
     "notebook.output.textLineLimit": 500,
     "jupyter.notebookFileRoot": "${workspaceFolder}",
     // If you want auto-save
-    "files.autoSave": "onFocusChange"
+    "files.autoSave": "onFocusChange",
+    "ruff.configuration": {
+        "lint": {
+            "unfixable": ["F401"],
+        },
+    },
 }
